@@ -1,0 +1,88 @@
+<mat-sidenav-container class="shell-container">
+  <mat-sidenav
+    #sidenav
+    [mode]="isHandset ? 'over' : 'side'"
+    [opened]="sidenavOpened"
+    class="shell-sidenav"
+  >
+    <div class="sidenav-header">
+      <mat-icon class="app-logo">dashboard</mat-icon>
+      <span class="app-name">Angular App</span>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="sidenav-content">
+      @for (group of navGroups; track group.label) {
+        @if (group.label) {
+          <div class="nav-group-label">{{ group.label }}</div>
+        }
+        <mat-nav-list>
+          @for (item of group.items; track item.route) {
+            <a
+              mat-list-item
+              [routerLink]="item.route"
+              routerLinkActive="active-link"
+              [routerLinkActiveOptions]="item.route === '/' ? { exact: true } : { exact: false }"
+              (click)="onNavItemClick()"
+            >
+              <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+              <span matListItemTitle>{{ item.label }}</span>
+            </a>
+          }
+        </mat-nav-list>
+      }
+    </div>
+
+    <div class="sidenav-footer">
+      <mat-divider></mat-divider>
+      <mat-nav-list>
+        <a mat-list-item>
+          <mat-icon matListItemIcon>help_outline</mat-icon>
+          <span matListItemTitle>Help & Support</span>
+        </a>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="shell-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="toolbar-title">Angular Skeleton</span>
+      <span class="toolbar-spacer"></span>
+
+      <div class="search-bar">
+        <mat-icon>search</mat-icon>
+        <input type="text" placeholder="Search..." />
+      </div>
+
+      <button mat-icon-button [matBadge]="3" matBadgeColor="warn" matBadgeSize="small">
+        <mat-icon>notifications</mat-icon>
+      </button>
+
+      <button mat-icon-button [matMenuTriggerFor]="userMenu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>person</mat-icon>
+          <span>My Profile</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>settings</mat-icon>
+          <span>Account Settings</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+
+    <div class="shell-content">
+      <router-outlet />
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

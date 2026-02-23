@@ -1,0 +1,166 @@
+<div class="home-container">
+  <div class="welcome-section">
+    <h1>Dashboard</h1>
+    <p class="subtitle">Welcome back! Here's a quick overview of available Material components.</p>
+  </div>
+
+  <div class="stats-row">
+    <mat-card>
+      <mat-card-content>
+        <div class="stat">
+          <mat-icon color="primary">people</mat-icon>
+          <div class="stat-info">
+            <span class="stat-value">1,248</span>
+            <span class="stat-label">Total Users</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-content>
+        <div class="stat">
+          <mat-icon color="accent">trending_up</mat-icon>
+          <div class="stat-info">
+            <span class="stat-value">84%</span>
+            <span class="stat-label">Growth</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-content>
+        <div class="stat">
+          <mat-icon color="warn">shopping_cart</mat-icon>
+          <div class="stat-info">
+            <span class="stat-value">342</span>
+            <span class="stat-label">Orders</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-content>
+        <div class="stat">
+          <mat-icon style="color: #4caf50">attach_money</mat-icon>
+          <div class="stat-info">
+            <span class="stat-value">$12.4k</span>
+            <span class="stat-label">Revenue</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="component-grid">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Buttons</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="button-row">
+          <button mat-raised-button color="primary">Primary</button>
+          <button mat-raised-button color="accent">Accent</button>
+          <button mat-raised-button color="warn">Warn</button>
+          <button mat-raised-button disabled>Disabled</button>
+        </div>
+        <div class="button-row">
+          <button mat-stroked-button color="primary">Stroked</button>
+          <button mat-flat-button color="primary">Flat</button>
+          <button mat-icon-button color="primary" matTooltip="Favorite">
+            <mat-icon>favorite</mat-icon>
+          </button>
+          <button mat-mini-fab color="accent" matTooltip="Edit">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-fab extended color="primary">
+            <mat-icon>add</mat-icon>
+            Create
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Chips & Badges</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-chip-set>
+          <mat-chip highlighted>Angular</mat-chip>
+          <mat-chip>Material</mat-chip>
+          <mat-chip>TypeScript</mat-chip>
+          <mat-chip>RxJS</mat-chip>
+          <mat-chip>SCSS</mat-chip>
+        </mat-chip-set>
+        <mat-divider class="section-divider"></mat-divider>
+        <div class="badge-row">
+          <span matBadge="4" matBadgeOverlap="false">Messages</span>
+          <span matBadge="1" matBadgeColor="accent" matBadgeOverlap="false">Alerts</span>
+          <button mat-icon-button matBadge="15" matBadgeColor="warn" matBadgeSize="small">
+            <mat-icon>mail</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Progress Indicators</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="progress-label">Storage used — 65%</p>
+        <mat-progress-bar mode="determinate" [value]="65"></mat-progress-bar>
+        <p class="progress-label">Upload progress</p>
+        <mat-progress-bar mode="buffer" [value]="40" [bufferValue]="70"></mat-progress-bar>
+        <div class="spinner-row">
+          <mat-spinner [diameter]="40"></mat-spinner>
+          <mat-progress-spinner [diameter]="40" mode="determinate" [value]="75"></mat-progress-spinner>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Toggles & Checkboxes</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="toggle-column">
+          <mat-slide-toggle color="primary">Dark Mode</mat-slide-toggle>
+          <mat-slide-toggle color="accent" [checked]="true">Notifications</mat-slide-toggle>
+          <mat-slide-toggle color="warn">Maintenance Mode</mat-slide-toggle>
+        </div>
+        <mat-divider class="section-divider"></mat-divider>
+        <div class="toggle-column">
+          <mat-checkbox color="primary" [checked]="true">Remember me</mat-checkbox>
+          <mat-checkbox color="accent">Subscribe to updates</mat-checkbox>
+          <mat-checkbox color="warn" [indeterminate]="true">Select all</mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="wide-card">
+      <mat-card-header>
+        <mat-card-title>Tabs</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-tab-group>
+          <mat-tab label="Overview">
+            <div class="tab-content">
+              <p>This is the overview tab content. Angular Material tabs provide a way to organize content into separate views.</p>
+            </div>
+          </mat-tab>
+          <mat-tab label="Details">
+            <div class="tab-content">
+              <p>Detailed information goes here. Each tab can contain its own component or template content.</p>
+            </div>
+          </mat-tab>
+          <mat-tab label="Activity">
+            <div class="tab-content">
+              <p>Recent activity feed would be displayed in this section. Great for dashboards and detail views.</p>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

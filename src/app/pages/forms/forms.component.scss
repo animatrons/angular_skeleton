@@ -1,0 +1,101 @@
+.forms-container {
+  animation: fadeIn 0.3s ease;
+}
+
+.page-header {
+  margin-bottom: 24px;
+
+  h1 {
+    margin: 0 0 4px;
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  .subtitle {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 15px;
+  }
+}
+
+mat-card {
+  margin-bottom: 16px;
+
+  mat-card-content {
+    padding-top: 16px;
+  }
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+
+  & > * {
+    flex: 1;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.field-label {
+  display: block;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 8px;
+}
+
+.radio-group-field {
+  padding-top: 8px;
+
+  mat-radio-group {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+.slider-field {
+  padding-top: 8px;
+
+  mat-slider {
+    width: 100%;
+  }
+}
+
+.section-divider {
+  margin: 16px 0;
+}
+
+.toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.form-actions {
+  margin-top: 8px;
+
+  mat-progress-bar {
+    margin-bottom: 12px;
+  }
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+@media (max-width: 599px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
